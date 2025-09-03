@@ -77,6 +77,7 @@ return {
         "clang-format",
         "rust-analyzer",
         "phpactor",
+        "pretty-php",
       },
     },
   },
@@ -93,6 +94,7 @@ return {
       null_ls.setup {
         sources = {
           null_ls.builtins.diagnostics.selene,
+          null_ls.builtins.formatting.pretty_php,
         },
       }
     end,
