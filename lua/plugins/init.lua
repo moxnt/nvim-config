@@ -76,6 +76,7 @@ return {
         "clangd",
         "clang-format",
         "rust-analyzer",
+        "phpactor",
       },
     },
   },
