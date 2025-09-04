@@ -1,7 +1,4 @@
 require "nvchad.mappings"
-
-vim = _G.vim
-
 -- add yours here
 
 local map = vim.keymap.set
