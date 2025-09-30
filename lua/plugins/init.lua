@@ -63,6 +63,7 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        "intelephense",
         "css-lsp",
         "html-lsp",
         "lua-language-server",
@@ -76,7 +77,6 @@ return {
         "clangd",
         "clang-format",
         "rust-analyzer",
-        "phpactor",
         "pretty-php",
       },
     },
