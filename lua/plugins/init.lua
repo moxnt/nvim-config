@@ -56,9 +56,9 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "intelephense",
         "css-lsp",
         "html-lsp",
+        "intelephense",
         "lua-language-server",
         "prettier",
         "stylua",
@@ -71,6 +71,7 @@ return {
         "clang-format",
         "rust-analyzer",
         "pretty-php",
+        "laravel-ls",
       },
     },
   },
@@ -103,5 +104,16 @@ return {
     "mrcjkb/rustaceanvim",
     version = "^6", -- Recommended
     lazy = false, -- This plugin is already lazy
+  },
+  {
+    {
+      "iamcco/markdown-preview.nvim",
+      cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+      build = "cd app && npm install",
+      init = function()
+        vim.g.mkdp_filetypes = { "markdown" }
+      end,
+      ft = { "markdown" },
+    },
   },
 }

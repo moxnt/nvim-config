@@ -6,7 +6,7 @@ require "nvchad.options"
 -- o.cursorlineopt ='both' -- to enable cursorline!
 --
 if vim.g.neovide then
-  vim.o.guifont = "JetBrainsMono Nerd Font Propo:h16"
+  vim.o.guifont = "JetBrainsMono Nerd Font Mono:h16"
   vim.g.neovide_hide_mouse_when_typing = true
   vim.g.neovide_refresh_rate = 120
   vim.g.neovide_refresh_rate_idle = 30
