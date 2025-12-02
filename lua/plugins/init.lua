@@ -72,6 +72,7 @@ return {
         "rust-analyzer",
         "pretty-php",
         "laravel-ls",
+        "tinymist",
       },
     },
   },
