@@ -10,6 +10,7 @@ return {
         javasript = { "prettier" },
         jsx = { "prettier" },
         typescript = { "prettier" },
+        typescriptreact = { "prettier" },
         c = { "clang-format" },
         rust = { "rustfmt", lsp_format = "fallback" },
       },
