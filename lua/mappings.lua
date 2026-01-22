@@ -20,7 +20,7 @@ map("n", "gl", function()
   vim.diagnostic.open_float()
 end, { desc = "Open diagnostic window" })
 vim.api.nvim_create_user_command("Think", function()
-  local time_string = os.date "%d-%m-%Y_%H"
+  local time_string = os.date "%d-%m-%Y"
   vim.api.nvim_command(string.format("e ~/yapping/thoughts@%s.md", time_string))
 end, {})
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")

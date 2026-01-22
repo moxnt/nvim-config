@@ -11,14 +11,14 @@ return {
         jsx = { "prettier" },
         typescript = { "prettier" },
         typescriptreact = { "prettier" },
+        php = { "php_cs_fixer" },
         c = { "clang-format" },
         rust = { "rustfmt", lsp_format = "fallback" },
       },
-
       ---[[
       format_on_save = {
         -- These options will be passed to conform.format()
-        timeout_ms = 1000,
+        timeout_ms = 3000,
         lsp_fallback = true,
       },
     },
@@ -49,6 +49,7 @@ return {
         "css",
         "javascript",
         "typescript",
+        "php",
       },
     },
   },
@@ -57,6 +58,7 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        "php-cs-fixer",
         "css-lsp",
         "html-lsp",
         "intelephense",
