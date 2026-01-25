@@ -73,7 +73,7 @@ return {
         "clangd",
         "clang-format",
         "rust-analyzer",
-        "pretty-php",
+        "mypy",
         "laravel-ls",
         "tinymist",
       },
@@ -92,7 +92,7 @@ return {
       null_ls.setup {
         sources = {
           null_ls.builtins.diagnostics.selene,
-          null_ls.builtins.formatting.pretty_php,
+          null_ls.builtins.diagnostics.mypy,
         },
       }
     end,
