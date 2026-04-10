@@ -1,5 +1,3 @@
-require "nvchad.mappings"
--- add yours here
 local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
@@ -23,6 +21,3 @@ vim.api.nvim_create_user_command("Think", function()
   local time_string = os.date "%d-%m-%Y"
   vim.api.nvim_command(string.format("e ~/yapping/thoughts@%s.md", time_string))
 end, {})
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
--- test comment
---
