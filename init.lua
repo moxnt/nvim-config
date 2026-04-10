@@ -1,4 +1,5 @@
-vim.opt.clipboard = unnamedplus
+vim.opt.clipboard = "unnamedplus"
+vim.opt.termguicolors = true
 
 require("mappings")
 require("options")
