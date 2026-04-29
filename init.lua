@@ -1,9 +1,10 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 vim.opt.clipboard = "unnamedplus"
 vim.opt.termguicolors = true
-vim.g.mapleader = " "
 
-require "mappings"
 require "options"
 require "lazyinit"
+require "mappings"
 
 vim.cmd.colorscheme [[dracula]]
