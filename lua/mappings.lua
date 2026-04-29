@@ -36,3 +36,22 @@ end, { desc = "Buffer Next" })
 vim.keymap.set("n", "<S-Tab>", function()
   require("bufferline").cycle(-1)
 end, { desc = "Buffer Prev" })
+
+vim.keymap.set("n", "<S-Tab>", function()
+  require("bufferline").cycle(-1)
+end, { desc = "Buffer Prev" })
+
+vim.keymap.set("n", "<leader>x", function()
+  local bd = require("mini.bufremove").delete
+  if vim.bo.modified then
+    local choice = vim.fn.confirm("Save changes?", "&Yes\n&No\n&Cancel")
+    if choice == 1 then
+      vim.cmd.write()
+      bd(0, false)
+    elseif choice == 2 then
+      bd(0, true) -- true forces delete even if modified
+    end
+  else
+    bd(0, false)
+  end
+end, { desc = "Close Buffer" })
