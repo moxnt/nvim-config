@@ -6,6 +6,7 @@ return {
       lua = { "stylua" },
       css = { "prettier" },
       html = { "prettier" },
+      htmldjango = { "prettier" },
       javascript = { "prettier" },
       javascriptreact = { "prettier" },
       typescript = { "prettier" },
