@@ -34,22 +34,6 @@ require("lazy").setup {
     { import = "plugins" },
     {
       {
-        "nvimtools/none-ls.nvim",
-        lazy = false,
-        dependencies = {
-          "nvim-lua/plenary.nvim",
-        },
-        config = function()
-          local null_ls = require "null-ls"
-
-          null_ls.setup {
-            sources = {
-              null_ls.builtins.diagnostics.mypy,
-            },
-          }
-        end,
-      },
-      {
         "mrcjkb/rustaceanvim",
         version = "^6", -- Recommended
         lazy = false, -- This plugin is already lazy

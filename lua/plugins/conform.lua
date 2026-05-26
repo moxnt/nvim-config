@@ -3,23 +3,24 @@ return {
   event = "BufWritePre",
   opts = {
     formatters_by_ft = {
-      lua = { "stylua" },
+      c = { "clang-format" },
       css = { "prettier" },
-      html = { "prettier" },
       htmldjango = { "prettier" },
+      html = { "prettier" },
       javascript = { "prettier" },
       javascriptreact = { "prettier" },
+      lua = { "stylua" },
+      php = { "php_cs_fixer" },
+      python = { "ruff_format", "ruff_organize_imports" },
+      rust = { "rustfmt", lsp_format = "fallback" },
       typescript = { "prettier" },
       typescriptreact = { "prettier" },
-      php = { "php_cs_fixer" },
-      c = { "clang-format" },
-      rust = { "rustfmt", lsp_format = "fallback" },
     },
     ---[[
     format_on_save = {
       -- These options will be passed to conform.format()
-      timeout_ms = 3000,
-      lsp_fallback = true,
+      timeout_ms = 500,
+      lsp_fallback = false,
     },
   },
 
