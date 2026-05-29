@@ -6,5 +6,6 @@ vim.opt.termguicolors = true
 require "options"
 require "lazyinit"
 require "mappings"
+require "dtwo"
 
 vim.cmd.colorscheme [[dracula]]

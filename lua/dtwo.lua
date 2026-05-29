@@ -1,0 +1,48 @@
+vim.api.nvim_create_autocmd("User", {
+  pattern = "TSUpdate",
+  callback = function()
+    require("nvim-treesitter.parsers").d2 = {
+      install_info = {
+        url = "https://github.com/ravsii/tree-sitter-d2",
+        files = { "src/parser.c" },
+        branch = "main",
+      },
+    }
+  end,
+})
+
+-- Tell Neovim that *.d2 files use the "d2" filetype
+vim.filetype.add {
+  extension = {
+    d2 = function()
+      return "d2", function(bufnr)
+        vim.bo[bufnr].commentstring = "# %s"
+      end
+    end,
+  },
+}
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = "*.d2",
+  callback = function()
+    local file = vim.fn.expand "%:p"
+    vim.fn.jobstart({ "d2", "fmt", file }, {
+      on_exit = function(_, code)
+        if code == 0 then
+          vim.schedule(function()
+            vim.cmd "edit" -- reload the buffer after formatting
+          end)
+        else
+          vim.notify("d2 fmt failed", vim.log.levels.ERROR)
+        end
+      end,
+    })
+  end,
+})
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "*.d2",
+  callback = function()
+    vim.treesitter.start()
+  end,
+})
