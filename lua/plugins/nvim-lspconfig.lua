@@ -8,6 +8,8 @@ return {
           analysis = {
             typeCheckingMode = "off",
             ignore = { "*" }, -- mypy owns type diagnostics
+            pythonPath = ".venv/bin/python",
+            autoSearchPaths = true,
           },
         },
       },

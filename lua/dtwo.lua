@@ -1,3 +1,4 @@
+-- get the parser in treesitter
 vim.api.nvim_create_autocmd("User", {
   pattern = "TSUpdate",
   callback = function()
@@ -11,7 +12,7 @@ vim.api.nvim_create_autocmd("User", {
   end,
 })
 
--- Tell Neovim that *.d2 files use the "d2" filetype
+-- d2 filetype, comments
 vim.filetype.add {
   extension = {
     d2 = function()
@@ -22,6 +23,7 @@ vim.filetype.add {
   },
 }
 
+-- d2 fmt is the formatter that ships with the d2 diagramming language
 vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = "*.d2",
   callback = function()
@@ -30,7 +32,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
       on_exit = function(_, code)
         if code == 0 then
           vim.schedule(function()
-            vim.cmd "edit" -- reload the buffer after formatting
+            vim.cmd "edit" -- reload after fmt
           end)
         else
           vim.notify("d2 fmt failed", vim.log.levels.ERROR)
@@ -40,6 +42,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   end,
 })
 
+-- starts treesitter
 vim.api.nvim_create_autocmd("BufEnter", {
   pattern = "*.d2",
   callback = function()

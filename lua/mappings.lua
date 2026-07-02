@@ -25,17 +25,13 @@ end, { desc = "Open diagnostic window" })
 -- Think command
 vim.api.nvim_create_user_command("Think", function()
   local time_string = os.date "%d-%m-%Y"
-  vim.api.nvim_command(string.format("e ~/yapping/thoughts@%s.md", time_string))
+  vim.api.nvim_command(string.format("e ~/Documents/notes/thoughts@%s.md", time_string))
 end, {})
 
 -- Buffers
 vim.keymap.set("n", "<Tab>", function()
   require("bufferline").cycle(1)
 end, { desc = "Buffer Next" })
-
-vim.keymap.set("n", "<S-Tab>", function()
-  require("bufferline").cycle(-1)
-end, { desc = "Buffer Prev" })
 
 vim.keymap.set("n", "<S-Tab>", function()
   require("bufferline").cycle(-1)
@@ -49,7 +45,7 @@ vim.keymap.set("n", "<leader>x", function()
       vim.cmd.write()
       bd(0, false)
     elseif choice == 2 then
-      bd(0, true) -- true forces delete even if modified
+      bd(0, true)
     end
   else
     bd(0, false)
