@@ -38,6 +38,8 @@ return {
       "laravel_ls",
       -- typst
       "tinymist",
+      --lua
+      "lua_ls",
     }
 
     vim.lsp.enable(servers)

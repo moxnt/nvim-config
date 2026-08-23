@@ -19,7 +19,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup {
 
   install = { colorscheme = { "nvchad" } },
-  checker = { enabled = true },
 
   ui = {
     icons = {
@@ -39,15 +38,12 @@ require("lazy").setup {
         lazy = false, -- This plugin is already lazy
       },
       {
-        {
-          "iamcco/markdown-preview.nvim",
-          cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-          build = "cd app && npm install",
-          init = function()
-            vim.g.mkdp_filetypes = { "markdown" }
-          end,
-          ft = { "markdown" },
-        },
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        ft = { "markdown" },
+        build = function()
+          vim.fn["mkdp#util#install"]()
+        end,
       },
     },
   },

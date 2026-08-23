@@ -31,11 +31,11 @@ end, {})
 -- Buffers
 vim.keymap.set("n", "<Tab>", function()
   require("bufferline").cycle(1)
-end, { desc = "Buffer Next" })
+end, { desc = "Next buffer" })
 
 vim.keymap.set("n", "<S-Tab>", function()
   require("bufferline").cycle(-1)
-end, { desc = "Buffer Prev" })
+end, { desc = "Previous buffer" })
 
 vim.keymap.set("n", "<leader>x", function()
   local bd = require("mini.bufremove").delete
