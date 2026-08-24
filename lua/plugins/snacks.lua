@@ -30,20 +30,20 @@ return {
       end,
       desc = "Command History",
     },
-    {
+    --[[{
       "<leader>n",
       function()
         Snacks.picker.notifications()
       end,
       desc = "Notification History",
-    },
-    {
+    },]]
+    --[[{
       "<leader>e",
       function()
         Snacks.explorer()
       end,
       desc = "File Explorer",
-    },
+    },]]
     -- find
     {
       "<leader>fb",
@@ -73,13 +73,13 @@ return {
       end,
       desc = "Find Git Files",
     },
-    {
+    --[[{
       "<leader>fp",
       function()
         Snacks.picker.projects()
       end,
       desc = "Projects",
-    },
+    },]]
     {
       "<leader>fr",
       function()
@@ -87,7 +87,8 @@ return {
       end,
       desc = "Recent",
     },
-    -- git
+    -- git, I like my editor doing editor things and would rather have git things done by a git tui
+    --[[
     {
       "<leader>gb",
       function()
@@ -136,9 +137,9 @@ return {
         Snacks.picker.git_log_file()
       end,
       desc = "Git Log File",
-    },
-    -- gh
-    {
+    },]]
+    -- gh, same thing
+    --[[{
       "<leader>gi",
       function()
         Snacks.picker.gh_issue()
@@ -165,7 +166,7 @@ return {
         Snacks.picker.gh_pr { state = "all" }
       end,
       desc = "GitHub Pull Requests (all)",
-    },
+    },]]
     -- Grep
     {
       "<leader>sb",
